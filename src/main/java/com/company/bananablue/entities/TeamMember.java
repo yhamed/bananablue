@@ -18,6 +18,9 @@ public class TeamMember implements Serializable {
     @Column(name="imageBase64")
     String image;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Apropos apropos;
+
     String description;
 
     public Long getId() {
@@ -67,4 +70,26 @@ public class TeamMember implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Apropos getApropos() {
+        return apropos;
+    }
+
+    public void setApropos(Apropos apropos) {
+        this.apropos = apropos;
+    }
+
+    @Override
+    public String toString() {
+        return "TeamMember{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", poste='" + poste + '\'' +
+                ", image='" + image + '\'' +
+                ", apropos=" + apropos +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
+

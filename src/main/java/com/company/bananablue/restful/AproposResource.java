@@ -82,7 +82,7 @@ public class AproposResource {
     @DeleteMapping(value = "/delete/item/{id}")
     public ResponseEntity deleteTeamMember(@PathVariable(value = "id") Long id) {
         try {
-            teamMemberRepository.deleteById(id);
+            teamMemberRepository.findById(id);
         } catch (Exception ex) {
             return  new ResponseEntity(HttpStatus.BAD_REQUEST);
         }

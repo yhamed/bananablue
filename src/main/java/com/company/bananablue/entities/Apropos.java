@@ -18,7 +18,7 @@ public class Apropos implements Serializable {
     @Column(name = "content")
     String content;
 
-    @OneToMany
+    @OneToMany(mappedBy = "apropos")
     List<TeamMember> memberList;
 
     public Long getId() {
