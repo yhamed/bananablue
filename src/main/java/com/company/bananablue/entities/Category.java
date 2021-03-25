@@ -16,10 +16,14 @@ public class Category {
 
     String description;
     String link;
-    @Column(name="ThumbnailImageBase64")
-    String thumbnail;
 
-    @Column(name = "thumbnailTitle")
+    @Column(name="image1")
+    String mainImage;
+
+    @Column(name="image2")
+    String image;
+
+    @Column(name = "titreImage")
     String titreImage;
 
     public Long getId() {
@@ -54,12 +58,20 @@ public class Category {
         this.link = link;
     }
 
-    public String getThumbnail() {
-        return thumbnail;
+    public String getMainImage() {
+        return mainImage;
     }
 
-    public void setThumbnail(String thumbnail) {
-        this.thumbnail = thumbnail;
+    public void setMainImage(String mainImage) {
+        this.mainImage = mainImage;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getTitreImage() {
