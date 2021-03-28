@@ -17,6 +17,12 @@ public class CarouselEntry  implements Serializable {
     @Column(name="imageBase64")
     String image;
 
+    String titre;
+
+    String url;
+
+    String description;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
     Carousel carousel;
@@ -64,5 +70,29 @@ public class CarouselEntry  implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

@@ -11,7 +11,7 @@ public class Carousel implements Serializable {
     public Carousel() {
 
     }
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
     Long id;
     @Column(name = "title")
     String titre;
