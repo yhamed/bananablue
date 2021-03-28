@@ -1,7 +1,5 @@
 package com.company.bananablue.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -17,8 +15,7 @@ public class Carousel implements Serializable {
     Long id;
     @Column(name = "title")
     String titre;
-
-    @JsonIgnore
+    
     @OneToMany(mappedBy = "carousel")
     List<CarouselEntry> items;
 
