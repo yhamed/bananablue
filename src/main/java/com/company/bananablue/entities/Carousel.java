@@ -54,6 +54,14 @@ public class Carousel implements Serializable {
         this.description = description;
     }
 
+    public List<CarouselEntry> getItems() {
+        return items;
+    }
+
+    public void setItems(List<CarouselEntry> items) {
+        this.items = items;
+    }
+
     @Override
     public String toString() {
         return "Carousel{" +

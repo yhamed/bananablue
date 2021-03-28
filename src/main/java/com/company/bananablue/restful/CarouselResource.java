@@ -63,8 +63,7 @@ public class CarouselResource {
     public ResponseEntity<List<CarouselEntry>> findAllCarouselItems(@PathVariable(value = "id") Long id) {
         List<CarouselEntry> carouselEntries = new ArrayList<>();
         try {
-           carouselEntries = ResourceUtils.toList(carouselEntryRepository.findAll());
-           carouselEntries.stream().filter(e-> e.getCarousel() != null && id.equals(e.getCarousel().getId())).collect(Collectors.toList());
+            carouselEntries=  carouselRepository.findById(id).orElseThrow(() -> new Exception()).getItems();
            if(carouselEntries.isEmpty()) {
                throw new Exception("No carousel entries found");
            }
