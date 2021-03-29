@@ -23,7 +23,7 @@ public class CarouselEntry  implements Serializable {
 
     String description;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JsonIgnore
     Carousel carousel;
 
