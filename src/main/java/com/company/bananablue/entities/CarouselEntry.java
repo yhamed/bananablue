@@ -14,13 +14,15 @@ public class CarouselEntry  implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    @Column(name="imageBase64")
+    @Column(name="imageBase64",columnDefinition = "LONGTEXT")
     String image;
 
     String titre;
 
+    @Column(columnDefinition = "LONGTEXT")
     String url;
 
+    @Column(columnDefinition = "LONGTEXT")
     String description;
 
     @ManyToOne

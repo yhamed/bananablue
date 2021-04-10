@@ -1,5 +1,7 @@
 package com.company.bananablue.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -15,10 +17,12 @@ public class TeamMember implements Serializable {
     String firstName;
     String lastName;
     String poste;
-    @Column(name="imageBase64")
+
+    @Column(name="imageBase64",columnDefinition = "LONGTEXT")
     String image;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JsonIgnore
     private Apropos apropos;
 
     String description;

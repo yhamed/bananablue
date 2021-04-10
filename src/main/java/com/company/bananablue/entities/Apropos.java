@@ -15,7 +15,7 @@ public class Apropos implements Serializable {
     @Column(name = "title")
     String titre;
 
-    @Column(name = "content")
+    @Column(columnDefinition = "LONGTEXT")
     String content;
 
     @OneToMany(mappedBy = "apropos")

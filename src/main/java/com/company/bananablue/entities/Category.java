@@ -14,13 +14,15 @@ public class Category {
     @Column(name = "title")
     String titre;
 
+    @Column(columnDefinition = "LONGTEXT")
     String description;
+    @Column(columnDefinition = "LONGTEXT")
     String link;
 
-    @Column(name="image1")
+    @Column(name="image1",columnDefinition = "LONGTEXT")
     String mainImage;
 
-    @Column(name="image2")
+    @Column(name="image2",columnDefinition = "LONGTEXT")
     String image;
 
     @Column(name = "titreImage")

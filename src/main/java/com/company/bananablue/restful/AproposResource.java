@@ -41,7 +41,7 @@ public class AproposResource {
         try {
             aproposRepository.deleteById(id);
         } catch (Exception ex) {
-            return  new ResponseEntity(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity(HttpStatus.OK);
     }
@@ -49,19 +49,14 @@ public class AproposResource {
 
     @PostMapping(value = "/create/item/{id}")
     public ResponseEntity createAproposTeamMember(@RequestBody TeamMember teamMemberRequest, @PathVariable(value = "id") Long id) {
+
         try {
-           TeamMember teamMember = teamMemberRepository.save(teamMemberRequest);
-           Optional<Apropos> aproposOptional = aproposRepository.findById(id);
-           if(aproposOptional.isPresent()) {
-               Apropos apropos = aproposOptional.get();
-               apropos.getMemberList().add(teamMember);
-           aproposRepository.save(apropos);
-               return new ResponseEntity(teamMember,HttpStatus.OK);
-           }
-           throw new Exception("There was a problem creating the entity TeamMember");
+            teamMemberRequest.setApropos(aproposRepository.findById(id).orElseThrow());
+            teamMemberRepository.save(teamMemberRequest);
         } catch (Exception ex) {
-            return  new ResponseEntity(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @GetMapping(value = "/findall/item/{id}")

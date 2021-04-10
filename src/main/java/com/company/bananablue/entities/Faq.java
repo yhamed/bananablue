@@ -13,6 +13,7 @@ public class Faq implements Serializable {
     Long id;
 
     String nom;
+    @Column(columnDefinition = "LONGTEXT")
     String content;
 
     public Long getId() {

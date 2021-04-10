@@ -14,8 +14,10 @@ public class Sponsor implements Serializable {
     Long id;
 
     String nom;
-    @Column(name="imageBase64")
+    @Column(name="imageBase64",columnDefinition = "LONGTEXT")
     String image;
+
+    @Column(columnDefinition = "LONGTEXT")
     String link;
 
     public Long getId() {

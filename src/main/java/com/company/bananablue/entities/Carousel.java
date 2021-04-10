@@ -19,7 +19,10 @@ public class Carousel implements Serializable {
     @OneToMany(mappedBy = "carousel")
     List<CarouselEntry> items;
 
+    @Column(columnDefinition = "LONGTEXT")
     String footer;
+
+    @Column(columnDefinition = "LONGTEXT")
     String description;
 
     public Long getId() {

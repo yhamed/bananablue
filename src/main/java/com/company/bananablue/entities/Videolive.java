@@ -14,6 +14,7 @@ public class Videolive implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
+    @Column(columnDefinition = "LONGTEXT")
     String linkYoutube;
 
     Date startTime;

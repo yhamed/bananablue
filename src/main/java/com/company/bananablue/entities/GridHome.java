@@ -13,11 +13,14 @@ public GridHome() {
 Long id;
 @Column(name = "title")
 String titre;
+
+@Column(columnDefinition = "LONGTEXT")
 String content;
 
-@Column(name="imageBase64")
+@Column(name="imageBase64",columnDefinition = "LONGTEXT")
 String image;
 
+@Column(columnDefinition = "LONGTEXT")
 String link;
 
     public String getTitre() {
